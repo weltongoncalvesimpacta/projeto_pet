@@ -29,8 +29,9 @@ export default function Home() {
           <button
             className={styles.formButton}
             onClick={() => setShowVacinaForm(!showVacinaForm)}
+            
           >
-            VACINA
+            Dados do pet
           </button>
           <button
             className={styles.formButton}
@@ -57,22 +58,31 @@ export default function Home() {
             Consulta
           </button>
         </div>
-
-        {/* Formulário de cadastro de pet */}
         {showVacinaForm && (
-          <form className={styles.form}>
-            <label htmlFor="petName">Nome do pet: </label>
-            <input type="text" id="petName" name="petName" />
+  <form>
+    <label>
+      Nome:
+      <input type="text" name="nome" />
+    </label>
+    <label>
+      Raça:
+      <input type="text" name="raca" />
+    </label>
+    <label>
+      Idade:
+      <input type="number" name="idade" />
+    </label>
+    <label>
+      Sexo:
+      <select name="sexo">
+        <option value="M">Macho</option>
+        <option value="F">Fêmea</option>
+      </select>
+    </label>
+    <button type="submit">Salvar</button>
+  </form>
+)}
 
-            <label htmlFor="lastVacinaDate"> Data da última vacina: </label>
-            <input type="date" id="lastVacinaDate" name="lastVacinaDate" />
-
-            <label htmlFor="nextVacinaDate">Data da próxima vacina:  </label>
-            <input type=  "date" id=  "nextVacinaDate" name=   "nextVacinaDate" />
-
-              <button type=   "submit">    Salvar </button>
-          </form>
-        )}
       </main>
 
       <footer className={styles.footer}>
